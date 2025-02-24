@@ -8,16 +8,17 @@ const VideoCard = ({
     title,
     thumbnail,
     video,
-    users: { username, avatar },
+    user: { username, avatar },
   },
 }) => {
   const [play, setPlay] = useState(false);
   const player = useVideoPlayer(
     {
-      uri: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      uri: video,
     },
     (player) => {}
   );
+
   return (
     <View className="flex-col items-center px-4 mb-14">
       <View className="flex-row gap-3 items-start">

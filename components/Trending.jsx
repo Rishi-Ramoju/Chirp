@@ -1,12 +1,10 @@
 import {
-  View,
-  Text,
   FlatList,
   TouchableOpacity,
   ImageBackground,
   Image,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import * as Animatable from "react-native-animatable";
 import { icons } from "../constants";
 import { ResizeMode, Video } from "expo-av";
@@ -32,10 +30,9 @@ const zoomOut = {
 
 const TrendingItem = ({ activeItem, item }) => {
   const [play, setPlay] = useState(false);
-  const videoSource = `${item.video}.mp4`;
   const player = useVideoPlayer(
     {
-      uri: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      uri: item.video,
     },
     (player) => {
       player.play();
@@ -109,11 +106,11 @@ const TrendingItem = ({ activeItem, item }) => {
 const Trending = ({ posts }) => {
   const [activeItem, setActiveItem] = useState(posts[0]);
 
-  const ViewableItemsChanged = ({ viewableItems }) => {
+  const viewableItemsChanged = useCallback(({ viewableItems }) => {
     if (viewableItems.length > 0) {
       setActiveItem(viewableItems[0].key);
     }
-  };
+  }, []);
 
   return (
     <FlatList
@@ -122,7 +119,7 @@ const Trending = ({ posts }) => {
       renderItem={({ item }) => (
         <TrendingItem activeItem={activeItem} item={item} />
       )}
-      onViewableItemsChanged={ViewableItemsChanged}
+      onViewableItemsChanged={viewableItemsChanged}
       viewabilityConfig={{ itemVisiblePercentThreshold: 70 }}
       contentOffset={{ x: 170 }}
       horizontal

@@ -1,6 +1,6 @@
-# Welcome to your Expo app 👋
+# Welcome to Chirp 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This is an expo app made as part of learning React Native. This can be thanks to Adrian Hajdin (JavaScript Mastery). He provides this amazing course [React Native Course for Beginners in 2024 | Build a Full Stack React Native App].
 
 ## Get started
 
@@ -25,26 +25,14 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-## Get a fresh project
+## Application design in figma
 
-When you're ready, run:
+Figma -- (https://www.figma.com/design/o6xKq25ETLqw5ebqgZonVp/Aora---React-Native-Crash-Course?node-id=1-199)
 
-```bash
-npm run reset-project
-```
+Duplicate the design to your drafts and make modifications as you see fit.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Change appwrite config
 
-## Learn more
+Source -- (https://youtu.be/ZBCUegTZF7M?si=NIjUUZR-A1xGa9Uw&t=5378)
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Follow source and setup your project in appwrite and modify `config` in appwrite.js
